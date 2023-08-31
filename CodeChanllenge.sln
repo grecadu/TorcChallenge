@@ -13,6 +13,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{4CFF
 		..\..\..\Desktop\Seed.sql = ..\..\..\Desktop\Seed.sql
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Postman", "Postman", "{EE338332-3FD8-4BF1-A988-C57B5B4CD8AA}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\Desktop\Challange Collection.postman_collection.json = ..\..\..\Desktop\Challange Collection.postman_collection.json
+		..\..\..\Desktop\Test.postman_environment.json = ..\..\..\Desktop\Test.postman_environment.json
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

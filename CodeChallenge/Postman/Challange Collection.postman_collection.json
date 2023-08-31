@@ -1,0 +1,109 @@
+{
+	"info": {
+		"_postman_id": "00ca43ba-9ece-4bd8-b28a-0e36ed428db3",
+		"name": "Challange Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27480806"
+	},
+	"item": [
+		{
+			"name": "Authenticate",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"console.log( );\r",
+							"pm.environment.set(\"Token\", pm.response.json());"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API}}/Security",
+					"host": [
+						"{{API}}"
+					],
+					"path": [
+						"Security"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetProducts",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API}}/Products?id=1",
+					"host": [
+						"{{API}}"
+					],
+					"path": [
+						"Products"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateOrder",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"customerId\": 1,\r\n  \"productId\": 2,\r\n  \"quantity\": 3\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API}}/Orders",
+					"host": [
+						"{{API}}"
+					],
+					"path": [
+						"Orders"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
